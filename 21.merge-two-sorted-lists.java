@@ -29,6 +29,12 @@
  * 和普通的merge array一样，先比较值的大小
  * 然后将小的list贴在后面
  * 如果有一个list走到尽头，将另一个List贴在后面即可
+ * 
+ * 思路2
+ * 递归，
+ * 如果有一方是null，则直接返回另一方
+ * 将当前list的next 目标作为递归对象
+ * 最后返回当前的list
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -48,6 +54,7 @@ class Solution {
         // current.next=(l1==null)?l2:l1;
         // return prehead.next;
         // }
+
 
         // method 2
         if (l1 == null)

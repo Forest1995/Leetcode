@@ -33,16 +33,25 @@
  * 
  */
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
+ * Definition for singly-linked list. public class ListNode { int val; ListNode
+ * next; ListNode(int x) { val = x; } } 思路 双指针，一个快，一个等n个循环后开始
+ * 当前面指针到尾部时，慢指针就指到了倒数第n个位置 
+ * 然后进行操作即可 
+ * 注意：要被赋值的对象必须不是null （等号左边的必须不是null）
  */
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode fast = dummy;
+        ListNode slow = dummy;
+        while (fast.next != null) {
+            fast = fast.next;
+            n--;
+            if (n < 0)
+                slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummy.next;
     }
 }
-

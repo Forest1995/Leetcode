@@ -21,30 +21,11 @@ public class Main {
     }
 }
 
-len = s.length();
-if(len>=4){
-      for(int j=0;j<len-3;j++){
-          if(s.charAt(j)==s.charAt(j+1)&&s.charAt(j+2)==s.charAt(j+3)){
-              StringBuilder sb = new StringBuilder(s);
-              sb.deleteCharAt(j+3);
-              s=sb.toString();
-              }
-           }
-}
+
+String userName = myObj.nextLine(); 
 
 
-if(len>=3){
-    for(int j=0;j<len-2;j++){
-        if(s.charAt(j)==s.charAt(j+1)&&s.charAt(j+1)==s.charAt(j+2)){
-            StringBuilder sb = new StringBuilder(s);
-            sb.deleteCharAt(j+2);
-            s=sb.toString();
-            }
-   }
-}
 
-for (int i = ratings.length - 1; i >= 0; i--) {
-    if (ratings[i] > ratings[(i + 1)%ratings.length]) {
-        right2left[i] = right2left[(i + 1)%ratings.length] + 1;
-    }
-}
+
+
+
